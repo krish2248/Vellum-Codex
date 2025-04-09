@@ -1,20 +1,8 @@
 # 📚 Vellum Codex
 
-[🔗 Demo Link Here](#)  
+[🔗 Demo Link Here](www.sonikrish.com)  
 
 **Vellum Codex** is a beautifully crafted digital library that showcases my personal book collection. Inspired by the elegance of old paper, vintage textures, and the timeless joy of reading, this project is a tribute to the tactile charm of real books—carefully archived in a minimalist, web-friendly interface.
-
-## 🕮 Features
-
-- 📖 **Book Showcase**: View all books in gallery or shelf mode, complete with cover images and metadata.
-- 🗂️ **Filter & Sort**: Easily organize books by title, author, publisher, price, and read status.
-- 🔍 **Search Bar**: Instantly find any book in your collection.
-- 📘 **Reading Tracker**: Mark books as read or unread with progress saved in `localStorage`.
-- 🏷️ **Detailed Metadata**: Each book includes author, publisher, pages, price, and status.
-- 🖼️ **Cover Modal**: Click on any book to see a larger cover view.
-- 🧭 **Navigation Toggle**: Switch between shelf view and cover gallery.
-- 📜 **Vintage Aesthetic**: Light-mode-only design with vintage paper textures for a cozy, timeless vibe.
-- 📦 **Offline Ready**: Built with PWA support for offline access to your collection.
 
 ## 🛠 Tech Stack
 
