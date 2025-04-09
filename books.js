@@ -4,7 +4,7 @@ const books = [
     author: "George Orwell",
     description: "*Animal Farm* by George Orwell is a powerful allegorical novella where farm animals overthrow their human owner, seeking equality. However, their utopia collapses under a corrupt leadership, mirroring the rise of totalitarianism and the betrayal of revolutionary ideals.",
     read: true,
-    image: "/images/animal farm.jpg",
+    image: "../images/animal farm.jpg",
   },
   {
     title: "The God of the Woods",
