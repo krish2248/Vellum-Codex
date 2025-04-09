@@ -1,0 +1,196 @@
+/* ====== style.css ====== */
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark mode (default) is already set */
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #121212;
+  color: #f1f1f1;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-size: 1rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Small space between search bar and sort dropdown */
+  margin-left: 10px;
+}
+
+header input#searchBar {
+  padding: 5px 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+}
+
+header input#searchBar::placeholder {
+  color: #bbb;
+}
+
+header input#searchBar:focus {
+  outline: none;
+  border-color: #555;
+}
+
+header select#sortBy {
+  padding: 5px 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+header select#sortBy:focus {
+  outline: none;
+  border-color: #555;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-right: 140px;
+  text-align: center;
+  flex: 1;
+}
+
+#toggleTheme {
+  margin-right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#toggleTheme:hover {
+  background-color: #555;
+}
+
+main {
+  margin-top: 70px;
+  margin-bottom: 60px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.book-card {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+}
+
+.book-card img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #444;
+  margin-bottom: 1rem;
+}
+
+.book-card h3 {
+  margin-top: 0;
+  font-family: 'Courier New', monospace;
+}
+
+footer {
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+footer .social-links {
+  display: flex;
+  gap: 15px; /* Space between social links */
+  justify-content: center;
+  flex: 1;
+}
+
+footer .social-links a {
+  color: inherit; /* Inherit color from footer */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer .social-links a:hover {
+  text-decoration: underline;
+}
+
+footer .copyright {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Light mode */
+body.light-mode {
+  background-color: #f1f1f1;
+  color: #121212;
+}
+
+body.light-mode header,
+body.light-mode footer,
+body.light-mode .book-card {
+  background-color: #e4e4e4;
+  color: #121212;
+  border-color: #bbb;
+}
+
+body.light-mode #toggleTheme {
+  background-color: #ccc;
+  color: #121212;
+}
+
+body.light-mode #toggleTheme:hover {
+  background-color: #aaa;
+}
+
+body.light-mode footer {
+  background-color: #f1f1f1;
+  color: #121212; /* Change font color to black */
+}

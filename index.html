@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Book Collection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <input type="text" id="searchBar" placeholder="Search books..." />
+      <select id="sortBy">
+        <option value="">Sort By</option>
+        <option value="read">Read</option>
+        <option value="unread">Unread</option>
+        <option value="author">Author</option>
+      </select>
+    </div>
+    <h1>My Book Collection</h1>
+    <button id="toggleTheme">Toggle Theme</button>
+  </header>
+
+  <main>
+    <section class="books" id="bookGrid"></section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/notkrish03/" target="_blank">Instagram</a>
+      <a href="https://github.com/krish2248" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/krish-soni-460932228/" target="_blank">LinkedIn</a>
+      <a href="https://medium.com/@sonikrish2248" target="_blank">Medium</a>   
+      <a href="https://sonikrish.com" target="_blank">Portfolio</a>
+    </div>
+   
+  </footer>
+
+  <script src="books.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
