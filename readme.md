@@ -1,6 +1,6 @@
 # 📚 Vellum Codex
 
-[🔗 Demo Link Here](www.sonikrish.com)  
+[🔗 Demo Link Here](https://krish2248.github.io/Vellum-Codex/)  
 
 **Vellum Codex** is a beautifully crafted digital library that showcases my personal book collection. Inspired by the elegance of old paper, vintage textures, and the timeless joy of reading, this project is a tribute to the tactile charm of real books—carefully archived in a minimalist, web-friendly interface.
 
