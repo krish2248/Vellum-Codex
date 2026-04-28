@@ -89,7 +89,7 @@ function getGenre(author) {
 }
 
 // Add genre to each book
-const books = [
+var books = [
   {
     title: "Animal Farm",
     author: "George Orwell",
