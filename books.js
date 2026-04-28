@@ -83,7 +83,7 @@ const authorGenreMap = {
   "J. L. Carr": "Literary Fiction",
 };
 
-// Get genre for a book based on author
+// Get genre for a book based on author (must be before books array)
 function getGenre(author) {
   return authorGenreMap[author] || "Literary Fiction";
 }
