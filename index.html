@@ -75,24 +75,31 @@
   </footer>
 
   <script src="books.js"></script>
-  <script src="script.js"></script>
   <script>
-  // Wait for DOMContentLoaded and ensure books loaded
+  // Simple inline script  
+  var renderCalled = false;
+  function renderBooks() {
+    if (renderCalled) return;
+    renderCalled = true;
+    var grid = document.getElementById('bookGrid');
+    if (grid && typeof books !== 'undefined') {
+      books.forEach(function(b) {
+        var d = document.createElement('div');
+        d.className = 'book-card';
+        d.setAttribute('onclick', "window.location.href='book.html?book=' + encodeURIComponent('" + b.title.replace(/'/g, "\\'") + "')");
+        d.innerHTML = '<img src="' + b.image + '"><h3>' + b.title + '</h3><p class="author">' + b.author + '</p><span class="genre-tag">' + b.genre + '</span>';
+        grid.appendChild(d);
+      });
+    }
+    var l = document.getElementById('loader');
+    if (l) l.classList.add('hidden');
+  }
   document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-      var g = document.getElementById('bookGrid');
-      if (typeof books === 'undefined') {
-        console.log('books undefined, retrying...');
-        setTimeout(function() {
-          renderBooks();
-        }, 500);
-        return;
-      }
-      renderBooks();
-      var l = document.getElementById('loader');
-      if (l) l.classList.add('hidden');
-    }, 100);
+    setTimeout(renderBooks, 50);
   });
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(renderBooks, 50);
+  }
   </script>
 </body>
 </html>
