@@ -234,6 +234,60 @@ main {
   font-family: 'Courier New', monospace;
 }
 
+/* ====== Book Card Buttons ====== */
+.book-card-actions {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.book-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  transition: all 0.2s ease;
+}
+
+.book-btn-read {
+  background-color: #2d5a2d;
+  color: #90ee90;
+}
+
+.book-btn-read:hover {
+  background-color: #3d7a3d;
+}
+
+.book-btn-read.read {
+  background-color: #4a7a4a;
+  color: #98fb98;
+}
+
+.book-btn-favorite {
+  background-color: #5a2d3a;
+  color: #ffb6c1;
+}
+
+.book-btn-favorite:hover {
+  background-color: #7a3d4a;
+}
+
+.book-btn-favorite.favorited {
+  background-color: #c44569;
+  color: #ffe4e1;
+}
+
+.book-btn-current {
+  background-color: #2d4a5a;
+  color: #add8e6;
+}
+
+.book-btn-current:hover {
+  background-color: #3d5a7a;
+}
+
 footer {
   width: 100%;
   background-color: #1e1e1e;
@@ -295,5 +349,139 @@ body.light-mode #toggleTheme:hover {
 
 body.light-mode footer {
   background-color: #f1f1f1;
-  color: #121212; /* Change font color to black */
+  color: #121212;
+}
+
+/* ====== Stats Dashboard ====== */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #252525;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #90ee90;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ====== Genre Filter Tabs ====== */
+.genre-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  justify-content: center;
+}
+
+.genre-tab {
+  padding: 8px 16px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genre-tab:hover {
+  background-color: #444;
+}
+
+.genre-tab.active {
+  background-color: #4a7a4a;
+  border-color: #4a7a4a;
+}
+
+/* ====== Recommendation Search ====== */
+.rec-search-container {
+  padding: 20px;
+  text-align: center;
+}
+
+#recSearchInput {
+  padding: 10px 15px;
+  border: 1px solid #444;
+  border-radius: 25px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  width: 300px;
+  max-width: 80%;
+}
+
+#recSearchBtn {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #4a7a4a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.rec-section {
+  padding: 20px;
+}
+
+.rec-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.rec-book {
+  text-align: center;
+  padding: 10px;
+  background-color: #252525;
+  border-radius: 10px;
+  width: 120px;
+}
+
+.rec-book img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.rec-author {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.rec-genre {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.rec-goodreads {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.rec-goodreads:hover {
+  background-color: #444;
 }

@@ -37,6 +37,22 @@
   </header>
 
   <main>
+    <!-- Stats Dashboard -->
+    <section id="statsContainer" class="stats-dashboard"></section>
+    
+    <!-- Genre Filter Tabs -->
+    <section id="genreTabs" class="genre-tabs">
+      <button class="genre-tab active" onclick="filterByGenre('')">All</button>
+    </section>
+    
+    <!-- Recommendation Search -->
+    <section class="rec-search-container">
+      <input type="text" id="recSearchInput" placeholder="Enter a book name to get recommendations..." />
+      <button id="recSearchBtn" onclick="searchRecommendations()">Search</button>
+      <div id="recResults"></div>
+    </section>
+    
+    <!-- Books Grid -->
     <section class="books" id="bookGrid"></section>
   </main>
 
