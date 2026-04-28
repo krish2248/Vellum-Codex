@@ -1,35 +1,72 @@
 # 📚 Vellum Codex
 
-[🔗 Demo Link Here](https://krish2248.github.io/Vellum-Codex/)  
+[🔗 Live Demo](https://krish2248.github.io/Vellum-Codex/)
 
 **Vellum Codex** is a beautifully crafted digital library that showcases my personal book collection. Inspired by the elegance of old paper, vintage textures, and the timeless joy of reading, this project is a tribute to the tactile charm of real books—carefully archived in a minimalist, web-friendly interface.
 
+## ✨ Features
+
+- 📖 **Book Collection** - 74+ books with covers, descriptions, authors, and genres
+- 🎬 **Loading Animation** - Elegant 3D book flip animation on page load (3.5s)
+- 📊 **Stats Dashboard** - Track total books, books read, favorites, and reading progress
+- 🏷️ **Genre Filtering** - Filter books by genre (Fantasy, Classic, History, Mystery, etc.)
+- ❤️ **Favorites** - Mark and save favorite books
+- 📚 **Currently Reading** - Track books in progress
+- ✅ **Read/Unread Toggle** - Mark books as read or unread
+- 🔍 **Search** - Find books by title or author
+- 🔄 **Sort** - Sort by read status or author name
+- 🌙 **Theme Toggle** - Dark/light mode
+- 💡 **Recommendations** - Find similar books + link to Goodreads
+
 ## 🛠 Tech Stack
 
-- **HTML / CSS / JavaScript**
-- **LocalStorage** for read/unread state
-- **Vanilla JS** for filtering, searching, and UI logic
-- **PWA features** (coming soon)
+- HTML / CSS / JavaScript
+- LocalStorage for persistent data
+- Vanilla JS for all functionality
+- No external dependencies
 
-"A room without books is like a body without a soul." – Cicero
-Vellum Codex is more than a digital shelf—it's a space to honor the stories, textures, and emotions bound within every cover.
+## 🚀 Getting Started
 
+```bash
 git clone https://github.com/krish2248/Vellum-Codex.git
+cd Vellum-Codex
+# Open index.html in your browser
+```
 
-## Usage
+## 📖 Usage
 
-Search Books: Use the search bar at the top to find books by title or author.
-Sort Books: Use the dropdown menu to sort books by:
-Read status (Read/Unread)
-Author name
-Toggle Theme: Click the "Toggle Theme" button to switch between dark and light modes.
-View Book Details: Scroll through the grid to view book details, including the cover image, title, author, description, and read status.
+| Feature | How to Use |
+|---------|-----------|
+| **Search** | Type in the search bar to filter by title or author |
+| **Sort** | Use dropdown to sort by Read/Unread/Author |
+| **Genre Tabs** | Click genre tabs to filter books |
+| **Toggle Read** | Click "Mark Read" button on any book card |
+| **Favorite** | Click heart (♡) to add to favorites |
+| **Currently Reading** | Click "Read Now" to track in progress |
+| **Recommendations** | Enter book name to see similar books |
+| **Theme** | Click "Toggle Theme" for dark/light mode |
 
-## Technologies Used
+## 📚 Books
 
-HTML: Structure of the web app.
-CSS: Styling and responsive design.
-JavaScript: Functionality for search, sort, rendering, and theme toggling.
+The collection includes:
 
-Author : Krish Soni
+- **Classic Literature** - Dickens, Tolstoy, Hugo, Dostoevsky, Shakespeare
+- **Fantasy** - Brandon Sanderson, George R.R. Martin, Evan Winter
+- **History** - Antony Beevor, William Shirer, Norman
+- **Mystery & Thriller** - Agatha Christie, Richard Osman
+- **Philosophy** - Camus, Kafka, Voltaire
+- **Horror** - Bram Stoker, Mary Shelley
+- **Biography** - A.P.J. Abdul Kalam, Bear Grylls
+- **And more...**
 
+## 💾 Data Persistence
+
+All bookmarks, favorites, and read states are saved to your browser's localStorage—they'll persist between visits.
+
+## 👤 Author
+
+**Krish Soni** - [Website](https://sonikrish.com)
+
+---
+
+*"A room without books is like a body without a soul."* — Cicero
