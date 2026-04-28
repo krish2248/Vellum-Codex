@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Details - Vellum Codex</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="book-page.css" />
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div id="loader" class="loader">
+    <div class="book-flip-container">
+      <div class="book-flip">
+        <div class="book-flip-cover">
+          <span class="book-flip-title">Vellum</span>
+          <span class="book-flip-subtitle">Codex</span>
+        </div>
+        <div class="pages-container">
+          <div class="flipping-page"></div>
+          <div class="flipping-page"></div>
+          <div class="flipping-page"></div>
+          <div class="flipping-page"></div>
+          <div class="flipping-page"></div>
+        </div>
+        <div class="book-flip-back"></div>
+        <div class="book-flip-spine"></div>
+      </div>
+    </div>
+    <div class="loader-text">Loading book<span class="loader-dots"></span></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="back-btn">← Back</a>
+    <h1>Book Details</h1>
+    <button id="toggleTheme">Theme</button>
+  </header>
+
+  <main class="book-page-main">
+    <div id="bookContent" class="book-page-content">
+      <!-- Book content loaded via JS -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/notkrish03/" target="_blank">Instagram</a>
+      <a href="https://github.com/krish2248" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/krish-soni-460932228/" target="_blank">LinkedIn</a>
+      <a href="https://medium.com/@sonikrish2248" target="_blank">Medium</a>   
+      <a href="https://sonikrish.com" target="_blank">Portfolio</a>
+    </div>
+  </footer>
+
+  <script src="books.js"></script>
+  <script src="book-page.js"></script>
+</body>
+</html>

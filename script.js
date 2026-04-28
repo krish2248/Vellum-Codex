@@ -108,110 +108,24 @@ function renderBooks(filteredBooks = books) {
   const grid = document.getElementById('bookGrid');
   grid.innerHTML = '';
   
-  const readBooks = getStorageData('readBooks', {});
-  const favorites = getStorageData('favorites', []);
-  const currentReads = getStorageData('currentReads', []);
-  
   filteredBooks.forEach(book => {
     const card = document.createElement('div');
     card.classList.add('book-card');
-    card.onclick = () => openBookModal(book.title);
-    
-    const isRead = readBooks[book.title] ?? book.read;
-    const descPreview = book.description.substring(0, 100) + '...';
+    card.onclick = () => goToBookPage(book.title);
     
     card.innerHTML = `
       <img src="${book.image}" alt="${book.title}" />
       <h3>${book.title}</h3>
       <p class="author">${book.author}</p>
       <span class="genre-tag">${book.genre}</span>
-      <p class="description-preview">${descPreview}</p>
     `;
     grid.appendChild(card);
   });
 }
 
-// ====== Book Modal ======
-window.openBookModal = function(title) {
-  const book = books.find(b => b.title === title);
-  if (!book) return;
-  
-  const readBooks = getStorageData('readBooks', {});
-  const favorites = getStorageData('favorites', []);
-  const currentReads = getStorageData('currentReads', []);
-  
-  const isRead = readBooks[book.title] ?? book.read;
-  const isFavorite = favorites.includes(book.title);
-  const isCurrent = currentReads.includes(book.title);
-  
-  // Find recommendations (same author OR same genre)
-  const similar = books.filter(b => 
-    b.title !== book.title &&
-    (b.author === book.author || b.genre === book.genre)
-  ).slice(0, 5);
-  
-  const modalHTML = `
-    <div class="book-modal active" onclick="closeModal(event)">
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="modal-close" onclick="closeBookModal()">&times;</span>
-        <div class="modal-book">
-          <img src="${book.image}" alt="${book.title}" />
-          <div class="modal-details">
-            <h2>${book.title}</h2>
-            <p class="author-name">by ${book.author}</p>
-            <span class="genre-badge">${book.genre}</span>
-            <p class="description">${book.description}</p>
-            <a href="https://www.goodreads.com/search?q=${encodeURIComponent(book.title + ' ' + book.author)}" 
-               target="_blank" class="goodreads-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2V7h2v10z"/></svg>
-              Find on Goodreads
-            </a>
-            <div class="modal-actions">
-              <button class="modal-btn modal-btn-read" onclick="toggleRead('${book.title}')">
-                ${isRead ? '✓ Read' : 'Mark as Read'}
-              </button>
-              <button class="modal-btn modal-btn-favorite" onclick="toggleFavorite('${book.title}')">
-                ${isFavorite ? '♥ Favorited' : '♡ Add Favorite'}
-              </button>
-              <button class="modal-btn modal-btn-current" onclick="toggleCurrent('${book.title}')">
-                ${isCurrent ? '📚 Reading' : '📖 Start Reading'}
-              </button>
-            </div>
-            ${similar.length > 0 ? `
-              <div class="modal-recommendations">
-                <h4>You might also like:</h4>
-                <div class="rec-grid">
-                  ${similar.map(b => `
-                    <div class="rec-card" onclick="openBookModal('${b.title}')">
-                      <img src="${b.image}" alt="${b.title}" />
-                      <p>${b.title}</p>
-                    </div>
-                  `).join('')}
-                </div>
-              </div>
-            ` : ''}
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-  
-  // Remove existing modal
-  const existing = document.querySelector('.book-modal');
-  if (existing) existing.remove();
-  
-  document.body.insertAdjacentHTML('beforeend', modalHTML);
-};
-
-window.closeBookModal = function() {
-  const modal = document.querySelector('.book-modal');
-  if (modal) modal.remove();
-};
-
-window.closeModal = function(event) {
-  if (event.target.classList.contains('book-modal')) {
-    event.target.remove();
-  }
+// ====== Navigation =====
+window.goToBookPage = function(title) {
+  window.location.href = `book.html?book=${encodeURIComponent(title)}`;
 };
 
 // ====== Toggle Functions ======
