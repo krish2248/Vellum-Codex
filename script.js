@@ -1,11 +1,25 @@
-// ====== App Data (localStorage) ======
+// ====== App Data (localStorage) =====
 function getStorageData(key, defaultValue) {
-  const stored = localStorage.getItem(key);
-  return stored ? JSON.parse(stored) : defaultValue;
+  try {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : defaultValue;
+  } catch (e) {
+    return defaultValue;
+  }
 }
 
 function setStorageData(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
+}
+
+// ====== Global helpers for books.js =====
+function getUniqueGenres() {
+  const genres = new Set(books.map(book => book.genre));
+  return Array.from(genres).sort();
+}
+
+function getGenre(author) {
+  return 'Literary Fiction';
 }
 
 // ====== App Initialization ======
