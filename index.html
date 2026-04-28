@@ -75,21 +75,23 @@
   </footer>
 
   <script src="books.js"></script>
+  <script src="script.js"></script>
   <script>
-  // Simple inline script
+  // Wait for DOMContentLoaded and ensure books loaded
   document.addEventListener('DOMContentLoaded', function() {
-    var grid = document.getElementById('bookGrid');
-    if (!grid) { alert('No grid!'); return; }
-    alert('Rendering ' + books.length + ' books');
-    books.forEach(function(b) {
-      var c = document.createElement('div');
-      c.className = 'book-card';
-      c.innerHTML = '<img src="' + b.image + '"/><h3>' + b.title + '</h3>';
-      grid.appendChild(c);
-    });
-    
-    var loader = document.getElementById('loader');
-    if (loader) loader.classList.add('hidden');
+    setTimeout(function() {
+      var g = document.getElementById('bookGrid');
+      if (typeof books === 'undefined') {
+        console.log('books undefined, retrying...');
+        setTimeout(function() {
+          renderBooks();
+        }, 500);
+        return;
+      }
+      renderBooks();
+      var l = document.getElementById('loader');
+      if (l) l.classList.add('hidden');
+    }, 100);
   });
   </script>
 </body>
