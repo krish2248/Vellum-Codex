@@ -1,9 +1,23 @@
-// Toggle theme
+// ====== App Initialization ======
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.getElementById('loader');
+  
+  // Hide loader after 3.5 seconds
+  setTimeout(() => {
+    loader.classList.add('hidden');
+  }, 3500);
+  
+  // Render books
+  renderBooks();
+});
+
+// ====== Theme Toggle ======
 const toggleBtn = document.getElementById('toggleTheme');
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
 });
 
+// ====== Search ======
 const searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('input', (e) => {
   const query = e.target.value.toLowerCase();
@@ -14,6 +28,7 @@ searchBar.addEventListener('input', (e) => {
   renderBooks(filteredBooks);
 });
 
+// ====== Sort ======
 const sortBy = document.getElementById('sortBy');
 sortBy.addEventListener('change', (e) => {
   const criteria = e.target.value;
